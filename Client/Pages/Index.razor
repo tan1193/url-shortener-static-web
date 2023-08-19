@@ -1,9 +1,25 @@
 ﻿@page "/"
+@using BlazorApp.Shared
+@inject NavigationManager NavigationManager
 
-<PageTitle>Index</PageTitle>
+@code {
+    private string slug = "tui-nam";
+    private List<LinkDefinition> linkDefinitions = new ();
 
-<h1>Hello, world!</h1>
+    protected override void OnInitialized()
+    {
+        LinkService linkservice = new LinkService();
+        linkDefinitions = linkservice.GetLinkDefinitions();
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+        var linkDefinition = linkDefinitions.FirstOrDefault(ld => ld.Slug == slug);
+        if (linkDefinition != null)
+        {
+            var amazonUrl = linkDefinition.DefaultUrl; 
+            NavigationManager.NavigateTo(amazonUrl);
+        }
+        else
+        {
+            // Handle case when slug is not found
+        }
+    }
+}

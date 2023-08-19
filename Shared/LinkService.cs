@@ -11,7 +11,7 @@ namespace BlazorApp.Shared
         {
             new LinkDefinition
             {
-                Slug = "tui-nam",
+                Slug = "handbag",
                 DefaultUrl = "https://shope.ee/2VOqbwvDIv",
                 //RegionSpecificUrls = new List<string>
                 //{

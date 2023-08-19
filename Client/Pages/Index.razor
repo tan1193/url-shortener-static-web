@@ -1,25 +1,26 @@
-﻿@page "/"
+﻿@page "/{slug?}"
 @using BlazorApp.Shared
 @inject NavigationManager NavigationManager
 
 @code {
-    private string slug = "tui-nam";
-    private List<LinkDefinition> linkDefinitions = new ();
+    [Parameter]
+    public string? Slug { get; set; }
+
 
     protected override void OnInitialized()
     {
         LinkService linkservice = new LinkService();
-        linkDefinitions = linkservice.GetLinkDefinitions();
+        List<LinkDefinition> linkDefinitions = linkservice.GetLinkDefinitions();
 
-        var linkDefinition = linkDefinitions.FirstOrDefault(ld => ld.Slug == slug);
+        var linkDefinition = linkDefinitions.FirstOrDefault(ld => ld.Slug == Slug);
         if (linkDefinition != null)
         {
-            var amazonUrl = linkDefinition.DefaultUrl; 
-            NavigationManager.NavigateTo(amazonUrl);
+            var url = linkDefinition.DefaultUrl; 
+            NavigationManager.NavigateTo(url);
         }
         else
         {
-            // Handle case when slug is not found
+            NavigationManager.NavigateTo("https://shope.ee/4fSvV1oAGQ");
         }
     }
 }

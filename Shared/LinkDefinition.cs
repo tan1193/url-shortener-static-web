@@ -7,6 +7,7 @@ namespace BlazorApp.Shared
     {
         public string Slug { get; set; }
         public string DefaultUrl { get; set; }
+        public string PageTitle { get; set; }
         public List<string> RegionSpecificUrls { get; set; }
     }
 

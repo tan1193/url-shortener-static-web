@@ -13,6 +13,7 @@ namespace BlazorApp.Shared
             {
                 Slug = "handbag",
                 DefaultUrl = "https://shope.ee/2VOqbwvDIv",
+                PageTitle = "Teelab Crossbody Messenger Bag",
                 //RegionSpecificUrls = new List<string>
                 //{
                 //    "https://www.amazon.co.uk/product-1",

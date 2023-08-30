@@ -19,6 +19,17 @@ namespace BlazorApp.Shared
                 //    "https://www.amazon.co.uk/product-1",
                 //    "https://www.amazon.de/product-1"
                 //}
+            },
+             new LinkDefinition
+            {
+                Slug = "keyboard1",
+                DefaultUrl = "https://shope.ee/5KjJHeb0Ms",
+                PageTitle = "Bàn phím cơ mạch xuôi JAMESDONKEY A3 ",
+                //RegionSpecificUrls = new List<string>
+                //{
+                //    "https://www.amazon.co.uk/product-1",
+                //    "https://www.amazon.de/product-1"
+                //}
             }
         };
 
